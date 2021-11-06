@@ -8,4 +8,18 @@ def about(request):
     return render(request, 'pages/about.html')
 
 def mountain (request):
+
     return render(request, 'pages/mountain.html')
+
+def register (request):
+    return render(request, 'pages/register.html')
+
+def login (request):
+    return render(request, 'pages/login.html')
+
+def booked(request):
+    return render(request, 'pages/booked.html')
+
+def saved(request):
+    return render(request, 'pages/saved.html')
+

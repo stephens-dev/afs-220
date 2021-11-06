@@ -126,5 +126,12 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATIC_ROOT = '/home/stephens-pc/Documents/GitHub/afs-220/Capstone/capstone/capstone'
-STATICFILES_DIRS = ('/home/stephens-pc/Documents/GitHub/afs-220/Capstone/capstone/capstone/static'),
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL='/static/'
+# STATIC_ROOT = '/home/stephens-pc/Documents/GitHub/afs-220/Capstone/capstone'
+# STATICFILES_DIRS = ('/home/stephens-pc/Documents/GitHub/afs-220/Capstone/capstone/static'),
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'capstone/static')
+]
+
