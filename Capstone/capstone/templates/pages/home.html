@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Home Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <!-- <script src='main.js'></script> -->
+    <nav class="nav">
+        <ul>
+            <li><a href="mountain/">Mountain Trip</a></li>
+        </ul>
+    </nav>
+</head>
+{% block content %}
+<body>
+    <h1>Hello Home Page</h1>
+</body>
+{% endblock %}
+</html>
+
