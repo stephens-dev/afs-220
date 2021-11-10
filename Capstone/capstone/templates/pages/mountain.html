@@ -1,5 +1,25 @@
-
 {% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+        <!-- <link rel="stylesheet" href="{% static 'static/css/styles.css' %}"> -->
+    </head>
 {% block content%}
-<h1>Mountain</h1>
+    <body>
+
+        <div class="mountain-head">
+            <img src="https://www.theworldandthensome.com/wp-content/uploads/2021/06/shutterstock_532382011.jpg" alt="Snow Mountain">
+            <h1>Take a look at these wonderfull mountain trips. No matter which part of the 
+                country you call home. There is a mountain trip close to you.
+            </h1>
+            <img src="https://img.sunset02.com/sites/default/files/styles/4_3_horizontal_inbody_900x506/public/image/2016/05/main/secret-sierra-nevada-ca-mcgee-creek-sierra-crest-0513.jpg" alt="Mountain">
+        </div>
+    </body>
 {% endblock%}
