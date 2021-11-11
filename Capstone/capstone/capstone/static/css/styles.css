@@ -1,6 +1,7 @@
 body {
-  background-color: forestgreen;
+  background-color: black;
   font-family: cursive;
+  color: #CDCDCD;
 }
 .mountain-head {
     display: flex;
@@ -15,11 +16,11 @@ body {
   margin-left: 10%;
   margin-right: 10%;
 }
-.img-cal-mount {
-  display: flex;
-  flex-direction: row;
-  padding-top: 1%;
+.img-tn {
+  border: 5px solid black;
+
 }
+
 .img-head {
   width: 35%;
   height: auto;
@@ -43,7 +44,6 @@ body {
   display: flex;
   flex-direction: row;
   padding-top: 1%;
-  
 }
 .buttons {
   display: flex;
@@ -79,5 +79,6 @@ body {
   -webkit-user-select: none;
   vertical-align: middle;
   white-space: nowrap;
-  
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
