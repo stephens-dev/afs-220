@@ -1,6 +1,12 @@
-FROM python:3.8-slim-buster
+FROM python:3.10-slim-buster
 
 WORKDIR /app
+
+RUN  pip install --upgrade pip
+
+RUN apt-get update
+
+RUN apt-get install git -y
 
 COPY requirements.txt requirements.txt
 
