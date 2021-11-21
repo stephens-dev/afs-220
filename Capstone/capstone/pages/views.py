@@ -11,6 +11,12 @@ def mountain (request):
 
     return render(request, 'pages/mountain.html')
 
+def mountain_tn (request):
+    return render(request, 'pages/mountain_tn.html')
+
+def mountain_ca (request):
+    return render(request, 'pages/mountain_ca.html')
+
 def register (request):
     return render(request, 'pages/register.html')
 
