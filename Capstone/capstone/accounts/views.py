@@ -1,13 +1,28 @@
 from django.contrib import messages, auth
 from django.shortcuts import render, redirect
+# from django.contrib.auth.forms import UserCreationForm
 
 from pages.models import User
 
 # Create your views here.
 def login(request):
     if request.method == 'POST':
-        #Register User
-        return
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = auth.authenticate(username=username, password=password)
+
+        if user is not None:
+            auth.login(request, user)
+            return redirect ('/')
+
+        # if User.objects.filter(username = request.POST['username'], password= request.POST['password']).exists():
+        #     user = User.objects.get(username = request.POST['username'], password= request.POST['password'])
+        #     return render(request, 'pages/home.html',{'user': user})
+        else:
+            messages.error(request, 'Invalid username/password')
+            return redirect('login')
+        
     else:
         return render(request, 'accounts/login.html')
 
@@ -21,7 +36,8 @@ def register(request):
         password2 = request.POST['password2']
         question1 = request.POST['question1']
         question2 = request.POST['question2']
-        question3 = request.POST['question3']
+        answer1 = request.POST['answer1']
+        answer2 = request.POST['answer2']
         
         #Check to see if passwords match
         if password == password2:
@@ -29,10 +45,11 @@ def register(request):
                 messages.error(request,'The username is taken.')
                 return redirect('register')
             else:
-                user = User.objects.create(first_name=first_name,last_name=last_name,username=username,password=password,password2=password2,question1=question1,question2=question2,question3=question3)
+                user = User.objects.create(first_name=first_name,last_name=last_name,username=username,password=password,password2=password2,question1=question1,question2=question2,answer1=answer1,answer2=answer2)
                 # auth.login(request, user)
-                messages.success(request, 'You are now logged in.')
-                return redirect('/')
+                user.save()
+                messages.success(request, 'You have successfully registered.')
+                return redirect('login')
         else:
             messages.error(request, 'Passwords do not match')
             return redirect('register')
@@ -40,4 +57,6 @@ def register(request):
         return render(request, 'accounts/register.html')
 
 def logout(request):
-    return redirect(request, 'index')
+     if request.method == 'POST':
+        auth.logout(request)
+        return redirect('/')

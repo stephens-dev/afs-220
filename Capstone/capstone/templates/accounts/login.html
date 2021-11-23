@@ -12,7 +12,7 @@
             <div class="card-body">
               <!-- Error message -->
               {% include 'partials/_alerts.html' %}
-                <form action="{% url 'login' %}" method="POST">
+                <form action="{% url 'login' %}" method="POST" name="login">
                     {% csrf_token %}
                 <div class="form-group">
                   <label for="username">Username</label>
