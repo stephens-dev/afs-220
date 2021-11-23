@@ -102,6 +102,8 @@ img {
     text-align: center; }
     #top-bar .social {
       text-align: center !important; } }
+      
+
 
 .head {
         display: flex;
@@ -126,10 +128,10 @@ img {
   #showcase-inner h1 {
     font-size: 40px; } }
 
-    .img-head-home {
+
+/*     .img-head-home {
       width: 35%;
       height: auto;
       
-    }
-    
-    
+    } */
+   
