@@ -1,24 +1,32 @@
 from django.contrib import messages, auth
 from django.shortcuts import render, redirect
 # from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
-from pages.models import User
+from pages.models import Users
 
 # Create your views here.
 def login(request):
+
     if request.method == 'POST':
         username = request.POST['username']
-        password = request.POST['password']
+        password= request.POST['password']
 
-        user = auth.authenticate(username=username, password=password)
-
-        if user is not None:
-            auth.login(request, user)
-            return redirect ('/')
-
-        # if User.objects.filter(username = request.POST['username'], password= request.POST['password']).exists():
-        #     user = User.objects.get(username = request.POST['username'], password= request.POST['password'])
-        #     return render(request, 'pages/home.html',{'user': user})
+        user = auth.authenticate(username = username, password = password)
+        
+        # if user is not None:
+        #     auth.login(request, user)
+        #     messages.success(request, 'You are now logged in')
+        #     return redirect ('dashboard')
+        if User.objects.filter(username = request.POST['username'], password= request.POST['password']).exists():
+            user = User.objects.get(username = request.POST['username'], password= request.POST['password'])
+            auth.login(request, user)    
+            return redirect ('dashboard')
+            # context = {
+            #     'users' : user
+            #     }
+            # return render(request, 'pages/dashboard.html', context)
+            
         else:
             messages.error(request, 'Invalid username/password')
             return redirect('login')
@@ -45,9 +53,8 @@ def register(request):
                 messages.error(request,'The username is taken.')
                 return redirect('register')
             else:
-                user = User.objects.create(first_name=first_name,last_name=last_name,username=username,password=password,password2=password2,question1=question1,question2=question2,answer1=answer1,answer2=answer2)
-                # auth.login(request, user)
-                user.save()
+                user = Users.objects.create(first_name=first_name,last_name=last_name,username=username,password=password,password2=password2,question1=question1,question2=question2,answer1=answer1,answer2=answer2)
+                user = User.objects.create(first_name=first_name,last_name=last_name,username=username,password=password)
                 messages.success(request, 'You have successfully registered.')
                 return redirect('login')
         else:
