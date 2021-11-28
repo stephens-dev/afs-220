@@ -14,4 +14,10 @@ urlpatterns = [
     path('login', views.login, name='login'),
     path('booked', views.booked, name='booked'),
     path('saved', views.saved, name='saved'),
+    path('beach/', views.beach, name='beach'),
+    path('beach_fl/', views.beach_fl, name='beach_fl'),
+    path('beach_ca/', views.beach_ca, name='beach_ca'),
+
+    
+
 ]

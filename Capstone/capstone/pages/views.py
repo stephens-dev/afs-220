@@ -29,3 +29,11 @@ def booked(request):
 def saved(request):
     return render(request, 'pages/saved.html')
 
+def beach (request):
+    return render(request ,'pages/beach.html' )
+
+def beach_fl (request):
+    return render(request, 'pages/beach_fl.html')
+
+def beach_ca (request):
+    return render(request, 'pages/beach_ca.html')
