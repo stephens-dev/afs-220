@@ -77,11 +77,27 @@ def saved(request):
 def beach (request):
     return render(request ,'pages/beach.html' )
 
+def beach_tx (request):
+    return render(request ,'pages/beach_tx.html' )
+
 def beach_fl (request):
     return render(request, 'pages/beach_fl.html')
 
 def beach_ca (request):
     return render(request, 'pages/beach_ca.html')
+
+def jungle (request):
+    return render(request ,'pages/jungle.html' )
+
+def jungle_be (request):
+    return render(request ,'pages/jungle_be.html' )
+
+def jungle_br (request):
+    return render(request ,'pages/jungle_br.html' )
+
+def jungle_cr (request):
+    return render(request ,'pages/jungle_cr.html' )
+
 def dashboard(request):
     booked_trips = BookedTrips.objects.order_by('-trip_name').filter(user_id=request.user.id)
     saved_trips = SavedTrips.objects.order_by('-trip_name').filter(user_id=request.user.id)
