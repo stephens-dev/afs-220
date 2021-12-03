@@ -27,6 +27,7 @@
       <div class="row">
         <div class="col-md-9">
           <!-- Main Image -->
+
           <img src="{% static 'images/br_jungle_main.jpg' %}" alt="" class="img-main img-fluid mb-3" style = "height:510px;">
           <!-- Thumbnails -->
           <div class="row mb-5 thumbs">
@@ -62,6 +63,7 @@
                 <img src="{% static 'images/br_scenery4.jpg' %}" alt="" class="img-fluid">
               </a>
             </div>   
+
           </div>
           
           
@@ -69,11 +71,14 @@
           <!-- Description -->
           <div class="row mb-5">
             <div class="col-md-12">
+
               Come take a look at the jungles of Brazil and enjoy some local food. <br> Or spend your time exploring some of the most diverse jungles in the world.
+
             </div>
           </div>
         </div>
         <div class="col-md-3">
+
           <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal_book">Book Trip</button>
           <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal_save">Save Trip</button>
         </div>
@@ -83,6 +88,7 @@
 
  <!-- Inquiry Modal -->
  <div class="modal fade" id="inquiryModal_book" role="dialog">
+
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -103,7 +109,9 @@
           
           <div class="form-group">
             <label for="trip_name" class="col-form-label">Trip:</label>
+
             <input type="text" name="trip_name" class="form-control" value="Brazil Jungle Trip">
+
           </div>
           <div class="form-group">
             <label for="name" class="col-form-label">Name:</label>
@@ -151,6 +159,7 @@
           <div class="form-group">
             <label for="trip_name" class="col-form-label">Trip:</label>
             <input type="text" name="trip_name" class="form-control" value="Brazil Jungle Trip">
+
           </div>
           <div class="form-group">
             <label for="name" class="col-form-label">Name:</label>
@@ -169,6 +178,5 @@
   </div>
 </div>
 {% endblock %}
-
 
 
