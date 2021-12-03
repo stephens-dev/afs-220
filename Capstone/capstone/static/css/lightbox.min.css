@@ -58,6 +58,7 @@ html.lb-disable-scrolling {
 .lb-outerContainer:after {
   display: table;
 }
+
 .lb-loader {
   top: 43%;
   height: 25%;
