@@ -27,40 +27,42 @@
       <div class="row">
         <div class="col-md-9">
           <!-- Main Image -->
-          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/27/7a/56/mammoth-mountain.jpg?w=1200&h=-1&s=1" alt="" class="img-main img-fluid mb-3">
+
+          <img src="{% static 'images/california_mtn_main.jpg' %}" alt="" class="img-main img-fluid mb-3" style = "height:510px;">
           <!-- Thumbnails -->
           <div class="row mb-5 thumbs">
             <div class="col-md-2">
-              <a href="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/27/79/f2/mammoth-mountain.jpg?w=1200&h=-1&s=1" data-lightbox="home-images">
-                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/27/79/f2/mammoth-mountain.jpg?w=1200&h=-1&s=1" alt="" class="img-fluid">
+              <a href="{% static 'images/ca_scenery.jpg' %}" data-lightbox="home-images">
+                <img src="{% static 'images/ca_scenery.jpg' %}" alt="" class="img-fluid">
               </a>
             </div>
             <div class="col-md-2">
-              <a href="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/01/02/9a/09/crystal-lake.jpg?w=1200&h=-1&s=1" data-lightbox="home-images">
-                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/01/02/9a/09/crystal-lake.jpg?w=1200&h=-1&s=1" alt="" class="img-fluid">
+              <a href="{% static 'images/ca_scenery2.jpg' %}" data-lightbox="home-images">
+                <img src="{% static 'images/ca_scenery2.jpg' %}" alt="" class="img-fluid">
               </a>
             </div>
             <div class="col-md-2">
-              <a href="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/7f/58/df/photo3jpg.jpg?w=1100&h=-1&s=1" data-lightbox="home-images">
-                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/7f/58/df/photo3jpg.jpg?w=1100&h=-1&s=1" alt="" class="img-fluid">
+              <a href="{% static 'images/ca_scenery3.jpg' %}" data-lightbox="home-images">
+                <img src="{% static 'images/ca_scenery3.jpg' %}" alt="" class="img-fluid">
               </a>
             </div>
             
-              <div class="col-md-2">
-                <a href="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/7b/ad/39/mammoth-mountain.jpg?w=1200&h=-1&s=1" data-lightbox="home-images">
-                  <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/7b/ad/39/mammoth-mountain.jpg?w=1200&h=-1&s=1" alt="" class="img-fluid">
-                </a>
-              </div>
-              <div class="col-md-2">
-                <a href="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/7f/58/e3/photo7jpg.jpg?w=1100&h=-1&s=1" data-lightbox="home-images">
-                  <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/7f/58/e3/photo7jpg.jpg?w=1100&h=-1&s=1" alt="" class="img-fluid">
-                </a>
-              </div>
-              <div class="col-md-2">
-                <a href="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/89/9f/a0/lobby.jpg?w=600&h=-1&s=1" data-lightbox="home-images">
-                  <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/89/9f/a0/lobby.jpg?w=600&h=-1&s=1" alt="" class="img-fluid">
-                </a>
-              </div>
+            <div class="col-md-2">
+              <a href="{% static 'images/ca_scenery4.jpg' %}" data-lightbox="home-images">
+                <img src="{% static 'images/ca_scenery4.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+            <div class="col-md-2">
+              <a href="{% static 'images/ca_scenery5.jpg' %}" data-lightbox="home-images">
+                <img src="{% static 'images/ca_scenery5.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+            <div class="col-md-2">
+              <a href="{% static 'images/ca_scenery6.jpg' %}" data-lightbox="home-images">
+                <img src="{% static 'images/ca_scenery6.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+
               
                
           </div>
@@ -70,17 +72,18 @@
           <!-- Description -->
           <div class="row mb-5">
             <div class="col-md-12">
-              Come enjoy a weekend in these lovely cabins located in the mountains of california. Some beautiful cabins and breath taking landscape. You might also see so unique wildlife from the trails or from you cabin porch.
+              Come enjoy a weekend in these lovely cabins located in the mountains of California. Some beautiful cabins and breath taking landscape. You might also see so unique wildlife from the trails or from you cabin porch.
             </div>
           </div>
         </div>
         <div class="col-md-3">
-          <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal">Book Trip</button>
-          <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal">Save Trip</button>
+          <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal_book">Book Trip</button>
+          <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal_save">Save Trip</button>
         </div>
+        
       </div>
     </div>
-
+  </section>
 <!-- Inquiry Modal -->
 <div class="modal fade" id="inquiryModal_book" role="dialog">
   <div class="modal-dialog">
@@ -150,7 +153,7 @@
           
           <div class="form-group">
             <label for="trip_name" class="col-form-label">Trip:</label>
-            <input type="text" name="trip_name" class="form-control" value="Tennessee Mountains Trip">
+            <input type="text" name="trip_name" class="form-control" value="California Mountains Trip">
           </div>
           <div class="form-group">
             <label for="name" class="col-form-label">Name:</label>

@@ -27,42 +27,43 @@
       <div class="row">
         <div class="col-md-9">
           <!-- Main Image -->
-          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/58/0d/9e/cristalino-lodge.jpg?w=1200&h=-1&s=1" alt="" class="img-main img-fluid mb-3">
+
+          <img src="{% static 'images/br_jungle_main.jpg' %}" alt="" class="img-main img-fluid mb-3" style = "height:510px;">
           <!-- Thumbnails -->
           <div class="row mb-5 thumbs">
             <div class="col-md-2">
-              <a href="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/d7/60/98/cristalino-lodge.jpg?w=1200&h=-1&s=1" data-lightbox="home-images">
-                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/d7/60/98/cristalino-lodge.jpg?w=1200&h=-1&s=1" alt="" class="img-fluid">
+              <a href="{% static 'images/br_scenery2.jpg' %}" data-lightbox="home-images">
+                <img src="{% static 'images/br_scenery2.jpg' %}" alt="" class="img-fluid">
               </a>
             </div>
             <div class="col-md-2">
-              <a href="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/05/69/89/8d/bar-and-bonfire.jpg?w=800&h=-1&s=1" data-lightbox="home-images">
-                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/05/69/89/8d/bar-and-bonfire.jpg?w=800&h=-1&s=1" alt="" class="img-fluid">
-              </a>
-            </div>
-            <div class="col-md-2">
-              <a href="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/05/69/89/92/reading-room.jpg?w=800&h=-1&s=1" data-lightbox="home-images">
-                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/05/69/89/92/reading-room.jpg?w=800&h=-1&s=1" alt="" class="img-fluid">
+              <a href="{% static 'images/br_scenery3.jpg' %}" data-lightbox="home-images">
+                <img src="{% static 'images/br_scenery3.jpg' %}" alt="" class="img-fluid">
               </a>
             </div>
             
-              <div class="col-md-2">
-                <a href="https://dynamic-media-cdn.tripadvisor.com/media/photo-s/02/e5/20/96/white-whiskered-spider.jpg?w=500&h=-1&s=1" data-lightbox="home-images">
-                  <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-s/02/e5/20/96/white-whiskered-spider.jpg?w=500&h=-1&s=1" alt="" class="img-fluid">
-                </a>
-              </div>
-              <div class="col-md-2">
-                <a href="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/58/0f/98/cristalino-lodge.jpg?w=1200&h=-1&s=1" data-lightbox="home-images">
-                  <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/58/0f/98/cristalino-lodge.jpg?w=1200&h=-1&s=1" alt="" class="img-fluid">
-                </a>
-              </div>
-              <div class="col-md-2">
-                <a href="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/bc/00/15/lunch-time-in-the-restaurant.jpg?w=700&h=-1&s=1" data-lightbox="home-images">
-                  <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/bc/00/15/lunch-time-in-the-restaurant.jpg?w=700&h=-1&s=1" alt="" class="img-fluid">
-                </a>
-              </div>
-              
-               
+            
+            <div class="col-md-2">
+              <a href="{% static 'images/br_scenery.jpg' %}" data-lightbox="home-images">
+                <img src="{% static 'images/br_scenery.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+            <div class="col-md-2">
+              <a href="{% static 'images/br_scenery5.jpg' %}" data-lightbox="home-images">
+                <img src="{% static 'images/br_scenery5.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+            <div class="col-md-2">
+              <a href="{% static 'images/br_scenery6.jpg' %}" data-lightbox="home-images">
+                <img src="{% static 'images/br_scenery6.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>    
+            <div class="col-md-2">
+              <a href="{% static 'images/br_scenery4.jpg' %}" data-lightbox="home-images">
+                <img src="{% static 'images/br_scenery4.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>   
+
           </div>
           
           
@@ -70,19 +71,24 @@
           <!-- Description -->
           <div class="row mb-5">
             <div class="col-md-12">
-              Come take a look at the jungles of Brazil and enjoy some local food. Or spend your time exploring some of the most diverse jungles in the world.
+
+              Come take a look at the jungles of Brazil and enjoy some local food. <br> Or spend your time exploring some of the most diverse jungles in the world.
+
             </div>
           </div>
         </div>
         <div class="col-md-3">
-          <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal">Book Trip</button>
-          <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal">Save Trip</button>
+
+          <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal_book">Book Trip</button>
+          <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal_save">Save Trip</button>
         </div>
       </div>
     </div>
+ </section>
 
-<!-- Inquiry Modal -->
-<div class="modal fade" id="inquiryModal_book" role="dialog">
+ <!-- Inquiry Modal -->
+ <div class="modal fade" id="inquiryModal_book" role="dialog">
+
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -103,7 +109,9 @@
           
           <div class="form-group">
             <label for="trip_name" class="col-form-label">Trip:</label>
-            <input type="text" name="trip_name" class="form-control" value="California Mountains Trip">
+
+            <input type="text" name="trip_name" class="form-control" value="Brazil Jungle Trip">
+
           </div>
           <div class="form-group">
             <label for="name" class="col-form-label">Name:</label>
@@ -150,7 +158,8 @@
           
           <div class="form-group">
             <label for="trip_name" class="col-form-label">Trip:</label>
-            <input type="text" name="trip_name" class="form-control" value="Tennessee Mountains Trip">
+            <input type="text" name="trip_name" class="form-control" value="Brazil Jungle Trip">
+
           </div>
           <div class="form-group">
             <label for="name" class="col-form-label">Name:</label>
@@ -169,4 +178,5 @@
   </div>
 </div>
 {% endblock %}
+
 

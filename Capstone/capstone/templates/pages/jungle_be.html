@@ -27,41 +27,41 @@
       <div class="row">
         <div class="col-md-9">
           <!-- Main Image -->
-          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/f3/5c/c5/walkway-to-your-bungalow.jpg?w=1200&h=-1&s=1" alt="" class="img-main img-fluid mb-3">
+
+          <img src="{% static 'images/be_jungle_main.jpg' %}" alt="" class="img-main img-fluid mb-3" style = "height:510px;">
           <!-- Thumbnails -->
           <div class="row mb-5 thumbs">
             <div class="col-md-2">
-              <a href="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/e9/ae/86/sweet-songs-jungle-lodge.jpg?w=1200&h=-1&s=1" data-lightbox="home-images">
-                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/e9/ae/86/sweet-songs-jungle-lodge.jpg?w=1200&h=-1&s=1" alt="" class="img-fluid">
+              <a href="{% static 'images/be_scenery.jpg' %}" data-lightbox="home-images">
+                <img src="{% static 'images/be_scenery.jpg' %}" alt="" class="img-fluid">
               </a>
             </div>
             <div class="col-md-2">
-              <a href="https://dynamic-media-cdn.tripadvisor.com/media/photo-s/00/1b/e7/31/xunantunich.jpg?w=600&h=-1&s=1" data-lightbox="home-images">
-                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-s/00/1b/e7/31/xunantunich.jpg?w=600&h=-1&s=1" alt="" class="img-fluid">
+              <a href="{% static 'images/be_scenery4.jpg' %}" data-lightbox="home-images">
+                <img src="{% static 'images/be_scenery4.jpg' %}" alt="" class="img-fluid">
               </a>
             </div>
             <div class="col-md-2">
-              <a href="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/03/4c/ee/27/duplooy-s-jungle-lodge.jpg?w=1200&h=-1&s=1" data-lightbox="home-images">
-                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/03/4c/ee/27/duplooy-s-jungle-lodge.jpg?w=1200&h=-1&s=1" alt="" class="img-fluid">
+              <a href="{% static 'images/be_scenery2.jpg' %}" data-lightbox="home-images">
+                <img src="{% static 'images/be_scenery2.jpg' %}" alt="" class="img-fluid">
               </a>
             </div>
-            
-              <div class="col-md-2">
-                <a href="https://dynamic-media-cdn.tripadvisor.com/media/photo-s/01/14/45/2d/construction-of-a-new.jpg?w=600&h=-1&s=1" data-lightbox="home-images">
-                  <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-s/01/14/45/2d/construction-of-a-new.jpg?w=600&h=-1&s=1" alt="" class="img-fluid">
-                </a>
-              </div>
-              <div class="col-md-2">
-                <a href="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/03/38/c2/3b/duplooy-s-jungle-lodge.jpg?w=1100&h=-1&s=1" data-lightbox="home-images">
-                  <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/03/38/c2/3b/duplooy-s-jungle-lodge.jpg?w=1100&h=-1&s=1" alt="" class="img-fluid">
-                </a>
-              </div>
-              <div class="col-md-2">
-                <a href="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/03/38/c2/36/duplooy-s-jungle-lodge.jpg?w=800&h=-1&s=1" data-lightbox="home-images">
-                  <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/03/38/c2/36/duplooy-s-jungle-lodge.jpg?w=800&h=-1&s=1" alt="" class="img-fluid">
-                </a>
-              </div>
-              
+            <div class="col-md-2">
+              <a href="{% static 'images/be_scenery3.jpg' %}" data-lightbox="home-images">
+                <img src="{% static 'images/be_scenery3.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+            <div class="col-md-2">
+              <a href="{% static 'images/be_scenery5.jpg' %}" data-lightbox="home-images">
+                <img src="{% static 'images/be_scenery5.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+            <div class="col-md-2">
+              <a href="{% static 'images/be_scenery6.jpg' %}" data-lightbox="home-images">
+                <img src="{% static 'images/be_scenery6.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>    
+
                
           </div>
           
@@ -75,14 +75,16 @@
           </div>
         </div>
         <div class="col-md-3">
-          <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal">Book Trip</button>
-          <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal">Save Trip</button>
+          <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal_book">Book Trip</button>
+          <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal_save">Save Trip</button>
         </div>
       </div>
     </div>
+ </section>
 
-<!-- Inquiry Modal -->
-<div class="modal fade" id="inquiryModal_book" role="dialog">
+ <!-- Inquiry Modal -->
+ <div class="modal fade" id="inquiryModal_book" role="dialog">
+
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -103,7 +105,9 @@
           
           <div class="form-group">
             <label for="trip_name" class="col-form-label">Trip:</label>
-            <input type="text" name="trip_name" class="form-control" value="California Mountains Trip">
+
+            <input type="text" name="trip_name" class="form-control" value="Belize Jungle Trip">
+
           </div>
           <div class="form-group">
             <label for="name" class="col-form-label">Name:</label>
@@ -150,7 +154,9 @@
           
           <div class="form-group">
             <label for="trip_name" class="col-form-label">Trip:</label>
-            <input type="text" name="trip_name" class="form-control" value="Tennessee Mountains Trip">
+
+            <input type="text" name="trip_name" class="form-control" value="Belize Jungle Trip">
+
           </div>
           <div class="form-group">
             <label for="name" class="col-form-label">Name:</label>
@@ -169,4 +175,5 @@
   </div>
 </div>
 {% endblock %}
+
 
