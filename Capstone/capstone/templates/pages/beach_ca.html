@@ -26,7 +26,6 @@
       <!-- <a href="/mountain" class="btn btn-light mb-4" >Back To Trip List</a> -->
       <div class="row">
         <div class="col-md-9">
-
            <!-- Main Image -->
            <img src="{% static 'images/ca_beach_main.jpg' %}" alt="" class="img-main img-fluid mb-3" style = "height:510px;">
            <!-- Thumbnails -->
@@ -75,9 +74,17 @@
         </div>
       </div>
       <div class="col-md-3">
+        {% if user.is_authenticated %}
+          <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal_book">Book Trip</button>
+          <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal_save">Save Trip</button>
+        {% else %}
 
-        <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal_book">Book Trip</button>
-        <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal_save">Save Trip</button>
+        <p><h6 style='color:red'> Please login to book/save this trip. </h6> </p>
+        <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal_book" disabled>Book Trip</button>
+        <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal_save" disabled>Save Trip</button>
+        
+        
+        {% endif %}
       </div>
     </div>
   </div>
@@ -99,6 +106,7 @@
         {% csrf_token %}
         {% if user.is_authenticated %}
           <input type="hidden" name="user_id" value="{{ users.id }}">
+          <input type="hidden" name="path" value="beach_ca/">
         {% else %}
           <input type="hidden" name="user_id" value="0">
         {% endif %}
@@ -171,5 +179,10 @@
 </div>
 </div>
 {% endblock %}
+
+
+
+
+
 
 
