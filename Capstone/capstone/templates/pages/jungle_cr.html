@@ -27,60 +27,63 @@
       <div class="row">
         <div class="col-md-9">
           <!-- Main Image -->
-          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/5b/20/11/pacuare-river-lodge.jpg?w=1000&h=-1&s=1" alt="" class="img-main img-fluid mb-3">
+          <img src="{% static 'images/cr_jungle_main.jpg' %}" alt="" class="img-main img-fluid mb-3" style = "height:510px;">
           <!-- Thumbnails -->
           <div class="row mb-5 thumbs">
             <div class="col-md-2">
-              <a href="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/5b/1d/f8/pacuare-river-lodge.jpg?w=1200&h=-1&s=1" data-lightbox="home-images">
-                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/5b/1d/f8/pacuare-river-lodge.jpg?w=1200&h=-1&s=1" alt="" class="img-fluid">
+              <a href="{% static 'images/cr_scenery.jpg' %}" data-lightbox="home-images">
+                <img src="{% static 'images/cr_scenery.jpg' %}" alt="" class="img-fluid">
               </a>
             </div>
             <div class="col-md-2">
-              <a href="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/91/b7/82/img-20171219-0754171.jpg?w=1200&h=-1&s=1" data-lightbox="home-images">
-                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/91/b7/82/img-20171219-0754171.jpg?w=1200&h=-1&s=1" alt="" class="img-fluid">
-              </a>
-            </div>
-            <div class="col-md-2">
-              <a href="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/e5/76/ac/pacuare-river-lodge.jpg?w=1200&h=-1&s=1" data-lightbox="home-images">
-                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/e5/76/ac/pacuare-river-lodge.jpg?w=1200&h=-1&s=1" alt="" class="img-fluid">
+              <a href="{% static 'images/cr_scenery2.jpg' %}" data-lightbox="home-images">
+                <img src="{% static 'images/cr_scenery2.jpg' %}" alt="" class="img-fluid">
               </a>
             </div>
             
-              <div class="col-md-2">
-                <a href="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/e7/21/33/hike.jpg?w=1200&h=-1&s=1" data-lightbox="home-images">
-                  <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/e7/21/33/hike.jpg?w=1200&h=-1&s=1" alt="" class="img-fluid">
-                </a>
-              </div>
-              <div class="col-md-2">
-                <a href="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/f1/f4/ea/pacuare-river-lodge.jpg?w=1100&h=-1&s=1" data-lightbox="home-images">
-                  <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/f1/f4/ea/pacuare-river-lodge.jpg?w=1100&h=-1&s=1" alt="" class="img-fluid">
-                </a>
-              </div>
-              <div class="col-md-2">
-                <a href="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/33/87/1d/pacuare-river-lodge.jpg?w=1000&h=-1&s=1" data-lightbox="home-images">
-                  <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/33/87/1d/pacuare-river-lodge.jpg?w=1000&h=-1&s=1" alt="" class="img-fluid">
-                </a>
-              </div>
-              
-               
-          </div>
-          
-          
-
-          <!-- Description -->
-          <div class="row mb-5">
-            <div class="col-md-12">
-              Come check out the wonderfull views and people in Costa Rica. Spend the night in the lovely cottages and spend your days walking some beutiful trails or floating the rivers.
+            
+            <div class="col-md-2">
+              <a href="{% static 'images/cr_scenery3.jpg' %}" data-lightbox="home-images">
+                <img src="{% static 'images/cr_scenery3.jpg' %}" alt="" class="img-fluid">
+              </a>
             </div>
+            <div class="col-md-2">
+              <a href="{% static 'images/cr_scenery4.jpg' %}" data-lightbox="home-images">
+                <img src="{% static 'images/cr_scenery4.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>
+            <div class="col-md-2">
+              <a href="{% static 'images/cr_scenery5.jpg' %}" data-lightbox="home-images">
+                <img src="{% static 'images/cr_scenery5.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>    
+            <div class="col-md-2">
+              <a href="{% static 'images/cr_scenery6.jpg' %}" data-lightbox="home-images">
+                <img src="{% static 'images/cr_scenery6.jpg' %}" alt="" class="img-fluid">
+              </a>
+            </div>   
           </div>
-        </div>
-        <div class="col-md-3">
-          <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal">Book Trip</button>
-          <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal">Save Trip</button>
+         <!-- Description -->
+         <div class="row mb-5">
+          <div class="col-md-12">
+            Come check out the wonderfull views and people in Costa Rica. Spend the night in the lovely cottages and spend your days walking some beutiful trails or floating the rivers.
+          </div>
         </div>
       </div>
+      <div class="col-md-3">
+        {% if user.is_authenticated %}
+          <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal_book">Book Trip</button>
+          <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal_save">Save Trip</button>
+        {% else %}
+        <p><h6 style='color:red'> Please login to book/save this trip. </h6> </p>
+        <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal_book" disabled>Book Trip</button>
+        <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal_save" disabled>Save Trip</button>
+        {% endif %}
+      </div>
     </div>
-
+  </div>
+</section>  
+  
 <!-- Inquiry Modal -->
 <div class="modal fade" id="inquiryModal_book" role="dialog">
   <div class="modal-dialog">

@@ -26,7 +26,6 @@
       <!-- <a href="/mountain" class="btn btn-light mb-4" >Back To Trip List</a> -->
       <div class="row">
         <div class="col-md-9">
-
          <!-- Main Image -->
          <img src="{% static 'images/tx_beach_main.jpg' %}" alt="" class="img-main img-fluid mb-3" style = "height:510px;">
          <!-- Thumbnails -->
@@ -78,8 +77,14 @@
           </div>
         </div>
         <div class="col-md-3">
-          <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal_book">Book Trip</button>
-          <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal_save">Save Trip</button>
+          {% if user.is_authenticated %}
+            <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal_book">Book Trip</button>
+            <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal_save">Save Trip</button>
+          {% else %}
+          <p><h6 style='color:red'> Please login to book/save this trip. </h6> </p>
+          <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal_book" disabled>Book Trip</button>
+          <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal_save" disabled>Save Trip</button>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -107,9 +112,7 @@
           
           <div class="form-group">
             <label for="trip_name" class="col-form-label">Trip:</label>
-
             <input type="text" name="trip_name" class="form-control" value="Texas Beach Trip">
-
           </div>
           <div class="form-group">
             <label for="name" class="col-form-label">Name:</label>
@@ -156,9 +159,7 @@
           
           <div class="form-group">
             <label for="trip_name" class="col-form-label">Trip:</label>
-
             <input type="text" name="trip_name" class="form-control" value="Texas Beach Trip">
-
           </div>
           <div class="form-group">
             <label for="name" class="col-form-label">Name:</label>
@@ -177,8 +178,6 @@
   </div>
 </div>
 {% endblock %}
-
-
 
 
 

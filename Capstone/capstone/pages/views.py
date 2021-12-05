@@ -26,6 +26,7 @@ def register (request):
 def login (request):
     return render(request, 'pages/login.html')
 
+
 def booked(request):
     if request.method == 'POST':
         #Get form values
@@ -35,6 +36,7 @@ def booked(request):
         message = request.POST['message']
         user_id = request.POST['user_id']
         trip_name = request.POST['trip_name']
+        trip_path = request.POST['trip_name']
 
         # Check if previously booked
         if request.user.is_authenticated:
@@ -45,11 +47,18 @@ def booked(request):
                 messages.error(request, 'You have previously requested to book the '+trip_name+ '.')
                 return redirect('dashboard')
 
-        booked = BookedTrips(user_email=email, user_phone=phone, user_message=message, user_id= user_id, trip_name=trip_name)
+        booked = BookedTrips(user_email=email, user_phone=phone, user_message=message, user_id= user_id, trip_name=trip_name,trip_path=trip_path)
         booked.save()
 
         messages.success(request, 'You have successfully requested to book the trip.')
-        return redirect('/')
+        return redirect('dashboard')
+# delete booking
+def delete_booking(request, id):
+    booking = BookedTrips.objects.get(id=id)
+    booking.delete()
+
+    messages.success(request, 'You have successfully deleted your booking.')
+    return redirect('dashboard')
 
 def saved(request):
     if request.method == 'POST':
@@ -58,6 +67,7 @@ def saved(request):
         email = request.POST['email']
         user_id = request.POST['user_id']
         trip_name = request.POST['trip_name']
+        trip_path = request.POST['trip_name']
 
         # Check if previously booked
         if request.user.is_authenticated:
@@ -68,11 +78,19 @@ def saved(request):
                 messages.error(request, 'You have previously saved '+trip_name+ '.')
                 return redirect('dashboard')
 
-        saved = SavedTrips(user_email=email,user_id= user_id, trip_name=trip_name)
+        saved = SavedTrips(user_email=email,user_id= user_id, trip_name=trip_name, trip_path=trip_path)
         saved.save()
 
         messages.success(request, 'You have successfully saved this trip.')
-        return redirect('/')
+        return redirect('dashboard')
+
+# unsave booking
+def unsave_booking(request, id):
+    saved = SavedTrips.objects.get(id=id)
+    saved.delete()
+
+    messages.success(request, 'You have successfully unsaved your trip.')
+    return redirect('dashboard')
 
 def beach (request):
     return render(request ,'pages/beach.html' )

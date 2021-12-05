@@ -22,9 +22,7 @@ urlpatterns = [
     path('jungle_be/', views.jungle_be, name='jungle_be'),
     path('jungle_br/', views.jungle_br, name='jungle_br'),
     path('jungle_cr/', views.jungle_cr, name='jungle_cr'),
-
-
-    
-
+    path('delete_booking/<id>', views.delete_booking, name='delete_booking'),
+    path('unsave_booking/<id>', views.unsave_booking, name='unsave_booking'),
     path('dashboard', views.dashboard, name='dashboard')
 ]

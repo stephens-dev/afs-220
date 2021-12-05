@@ -15,8 +15,8 @@ class Users(models.Model):
     # booked_trips = models.CharField(max_length=200, default='')
     # reviews = models.CharField(max_length=200, default='')
     # time_stamp = models.DateTimeField(auto_now_add=True, editable=False)
-    def __str__(self):
-        return self.name
+    # def __str__(self):
+    #     return self.name
 
 # class Reviews(models.Model):
 #     first_name = models.CharField(max_length=20)
@@ -32,6 +32,7 @@ class BookedTrips(models.Model):
     user_email = models.CharField(max_length=200,default='')
     user_message = models.TextField(blank=True)
     trip_name = models.CharField(max_length=200,default='')
+    trip_path = models.CharField(max_length=200,default='')
 
 class SavedTrips(models.Model):
     user_id = models.CharField(max_length=200,default='0')
@@ -39,3 +40,4 @@ class SavedTrips(models.Model):
     user_phone = models.CharField(max_length=200,default='')
     user_email = models.CharField(max_length=200,default='')
     trip_name = models.CharField(max_length=200,default='')
+    trip_path = models.CharField(max_length=200,default='')

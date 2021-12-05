@@ -58,10 +58,8 @@
                 {% for btrip in btrips %}
                   <tr>
                     <td>{{btrip.id}}</td>
-                    <td>{{btrip.trip_name}}</td>
-                    <td>
-                      
-                    </td>
+                    <td><a href='{{btrip.trip_path}}'>{{btrip.trip_name}}</a></td>
+                    <td><a href= "{% url 'delete_booking' btrip.id %}">Delete Booking</a></td>
                   </tr>
                 {% endfor%}
               </tbody>
@@ -92,10 +90,8 @@
                 {% for strip in strips %}
                   <tr>
                     <td>{{strip.id}}</td>
-                    <td>{{strip.trip_name}}</td>
-                    <td>
-                      
-                    </td>
+                    <td><a href='{{strip.trip_path}}'>{{strip.trip_name}}</a></td>
+                    <td><a href="{% url 'unsave_booking' strip.id %}">Unsave</a></td>
                   </tr>
                 {% endfor%}
               </tbody>
