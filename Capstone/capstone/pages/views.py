@@ -36,8 +36,9 @@ def booked(request):
         message = request.POST['message']
         user_id = request.POST['user_id']
         trip_name = request.POST['trip_name']
-        trip_path = request.POST['trip_name']
+        trip_path = request.POST['trip_path']
 
+        
         # Check if previously booked
         if request.user.is_authenticated:
             user_id = request.user.id
@@ -67,7 +68,7 @@ def saved(request):
         email = request.POST['email']
         user_id = request.POST['user_id']
         trip_name = request.POST['trip_name']
-        trip_path = request.POST['trip_name']
+        trip_path = request.POST['trip_path']
 
         # Check if previously booked
         if request.user.is_authenticated:
